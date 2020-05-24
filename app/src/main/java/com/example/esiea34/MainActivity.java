@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity { // une activity c'est un e
     }
 
     private List<Pokemon> getDataFromCash() {
-        String jsonPokemon=sharedPreferences.getString("jsonPokemonList",null);
+        String jsonPokemon=sharedPreferences.getString(Constants.KEY_POKEMON_LIST,null);
         if(jsonPokemon==null){
             return null;
         }
@@ -117,9 +117,9 @@ public class MainActivity extends AppCompatActivity { // une activity c'est un e
         String jsonString = gson.toJson(pokemonList);
         sharedPreferences
                 .edit()
-                .putString("jsonPokemonList", jsonString)
+                .putString(Constants.KEY_POKEMON_LIST, jsonString)
                 .apply();
-        Toast.makeText(getApplicationContext(), "Liste sauvegardee", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "Liste sauvegardée", Toast.LENGTH_SHORT).show();
 
     }
 
