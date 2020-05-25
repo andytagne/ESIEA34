@@ -15,7 +15,7 @@ import static org.junit.Assert.*;
 public class PokemonTest {
     private SharedPreferences sharedPreferences;
     private Gson gson;
-    private Constants constants;
+    private Constants constants=new Constants();
 
     private List<Pokemon> getDataFromCash() {
         String jsonPokemon=sharedPreferences.getString(constants.getPokemonKey(),null);
