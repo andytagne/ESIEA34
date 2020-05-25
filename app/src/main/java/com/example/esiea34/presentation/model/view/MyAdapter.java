@@ -1,4 +1,4 @@
-package com.example.esiea34;
+package com.example.esiea34.presentation.model.view;
 
 
 import android.view.LayoutInflater;
@@ -7,6 +7,9 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.esiea34.R;
+import com.example.esiea34.presentation.model.model.Pokemon;
 
 import java.util.List;
 

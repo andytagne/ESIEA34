@@ -1,4 +1,4 @@
-package com.example.esiea34;
+package com.example.esiea34.presentation.model.model;
 
 import java.util.List;
 
