@@ -89,4 +89,8 @@ public class MainController {
         }
 
     }
+
+    public void onItemClick(Pokemon item) {
+         view.navigateToDetails(item);
+    }
 }
