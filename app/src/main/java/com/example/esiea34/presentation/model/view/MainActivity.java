@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.example.esiea34.Constants;
 import com.example.esiea34.R;
+import com.example.esiea34.Singletons;
 import com.example.esiea34.data.PokeApi;
 import com.example.esiea34.presentation.model.controller.MainController;
 import com.example.esiea34.presentation.model.model.Pokemon;
@@ -42,9 +43,7 @@ public class MainActivity extends AppCompatActivity { // une activity c'est un e
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         MainActivity mainActivity;
-        controller = new MainController(this,new GsonBuilder()
-                .setLenient()
-                .create(),getSharedPreferences("application_esiea", Context.MODE_PRIVATE));
+        controller = new MainController(this, Singletons.getGson(),Singletons.getSharedPreferences(getApplicationContext()));
         controller.onStart();
    // Cat cat1 = new Cat("titi");
 
