@@ -4,9 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.widget.AdapterView;
 import android.widget.Toast;
 
 import com.example.esiea34.R;
@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity { // une activity c'est un e
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         MainActivity mainActivity;
-        controller = new MainController(this, Singletons.getGson(),Singletons.getSharedPreferences(getApplicationContext()));
+        controller = new MainController(MainActivity.this, Singletons.getGson(),Singletons.getSharedPreferences(getApplicationContext()));
         controller.onStart();
    // Cat cat1 = new Cat("titi");
 
@@ -66,7 +66,11 @@ public class MainActivity extends AppCompatActivity { // une activity c'est un e
     }
 
     public void navigateToDetails(Pokemon item) {
-        Toast.makeText(getApplicationContext(), "Naviguation reussie", Toast.LENGTH_SHORT).show();
+        Intent myIntent = new Intent(MainActivity.this, DetailActivity.class);
+        myIntent.putExtra("pokemonKey", Singletons.getGson().toJson(item)); //Optional parameters
+        MainActivity.this.startActivity(myIntent);
+
+
 
     }
 }

@@ -6,6 +6,7 @@ import com.example.esiea34.Constants;
 import com.example.esiea34.Singletons;
 import com.example.esiea34.presentation.model.model.Pokemon;
 import com.example.esiea34.presentation.model.model.RestPokemonResponse;
+import com.example.esiea34.presentation.model.view.DetailActivity;
 import com.example.esiea34.presentation.model.view.MainActivity;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -22,10 +23,17 @@ public class MainController {
     private SharedPreferences sharedPreferences;
     private Gson gson;
     private MainActivity view;
+    private DetailActivity view_1;
     private Constants constants=new Constants();
 
-    public MainController(MainActivity mainActivity,Gson gson,SharedPreferences sharedPreferences){
-        this.view=mainActivity;
+    public MainController(MainActivity mainActivity_1, Gson gson, SharedPreferences sharedPreferences){
+        this.view=mainActivity_1;
+        this.sharedPreferences= sharedPreferences;
+        this.gson=gson;
+    }
+
+    public MainController(DetailActivity mainActivity, Gson gson, SharedPreferences sharedPreferences){
+        this.view_1=mainActivity;
         this.sharedPreferences= sharedPreferences;
         this.gson=gson;
     }
